@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌿 CalmiVerse – Digital Mental Health Support Platform
 
 CalmiVerse is an AI-powered digital mental health support system designed for **college students**.  
@@ -70,3 +71,7 @@ uvicorn app.main:app --reload --port 8000
 Backend runs at: http://localhost:8000
 
 Docs (Swagger UI): http://localhost:8000/docs
+=======
+# CalmiVerse
+AI powered mental wellness platform with emotional analysis and calming support.
+>>>>>>> fa1928e00a35b11c823fd5b8ce2d7a81c928f18d
