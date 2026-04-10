@@ -1,0 +1,156 @@
+/* === General Auth Page Styles === */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.auth-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* === Google Button === */
+.google-btn {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.google-btn:hover {
+  background: #f3f4f6;
+}
+
+/* === Divider === */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  margin: 1.5rem 0;   /* spacing around */
+  border: none;       /* removes any unwanted line above */
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;  /* light gray line */
+}
+
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+
+/* === Form === */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: #7c3aed;
+}
+
+/* === Submit Button === */
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background: #7c3aed;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #6d28d9;
+}
+
+/* === Switch Auth Links === */
+.switch-auth {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #4b5563;
+  text-align: center;
+}
+
+.switch-auth a {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.switch-auth a:hover {
+  text-decoration: underline;
+}
+
+.auth-footer {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 12px;
+  color: #555;
+}
+
+.auth-footer a {
+  color: #6a4feb;   /* violet accent */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}

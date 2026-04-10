@@ -1,0 +1,447 @@
+/* === Global === */
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* === Dashboard Container & Header === */
+.dashboard-container {
+  padding: 2rem 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111827;
+}
+
+.dashboard-header p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.3rem;
+}
+
+/* === Layout Grid === */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+
+/* === Card (Common Style) === */
+.card,
+.firstaid-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  flex: 0.8; /* take all remaining height */
+  min-height: 200px; /* optional: ensure it's taller even with no chat */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover,
+.firstaid-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  color: #4f46e5;
+  margin: 0 0 1rem 0;
+}
+
+.title-icon {
+  margin-right: 0.5rem;
+  color: #6366f1;
+}
+
+/* ================================
+   📊 Wellbeing Snapshot
+   ================================ */
+/* Snapshot Card */
+.wellbeing-card {
+  background: #fff;
+  padding: 1.8rem;             /* slightly more breathing room */
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  font-family: "Inter", sans-serif;
+}
+
+/* Header (Hi + Mood/Status on right) */
+.snapshot-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;         /* vertical alignment */
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;       /* more space from body */
+}
+
+/* User info block */
+.user-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;                 /* compact spacing between lines */
+}
+
+/* Right status block */
+.status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
+  min-width: 200px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  font-size: 0.9rem;
+}
+
+/* Body Grid (Challenges + Support) */
+.snapshot-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;                   /* more space between left & right */
+  margin: 1.5rem 0;
+  align-items: start;
+}
+
+.snapshot-body h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+/* Pills */
+.pill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.pill {
+  background: #e5f3f5;
+  color: #0a6c74;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.pill.challenge {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+
+/* Suggestions */
+.suggestions {
+  margin-top: 1.5rem;
+}
+
+.suggestion-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.btn {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  background: #f3f4f6;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+
+/* Last updated */
+.last-updated {
+  margin-top: 0.8rem;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Mood badges */
+.mood-badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.mood-badge.happy {
+  background: #dcfce7;
+  color: #166534;
+}
+.mood-badge.relaxed {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.mood-badge.calm {
+  background: #f0fdf4;
+  color: #14532d;
+}
+.mood-badge.stressed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.mood-badge.anxious {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.mood-badge.sad {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+.mood-badge.neutral {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ================================
+   ⚡ Points & Tasks
+   ================================ */
+.points-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.points-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.points-icon {
+  color: #facc15;
+}
+
+.points-title {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.points-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.tasks-message {
+  margin-top: 0.8rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* =====================
+   CARD STYLES
+===================== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 80vh;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.card-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111827;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.card-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f9fafb;
+}
+
+.card-footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+/* =====================
+   CHAT CONTAINER
+===================== */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-message {
+  display: flex;
+}
+
+.chat-message.justify-end {
+  justify-content: flex-end;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.chat-bubble.user {
+  background: #2563eb;
+  color: white;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.chat-bubble.ai {
+  background: #f3f4f6;
+  color: #111827;
+  border-bottom-left-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* =====================
+   SUGGESTION BUTTONS
+===================== */
+.suggestion-btns {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.suggestion-btns .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.suggestion-btns .btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* =====================
+   INPUT AREA
+===================== */
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.chat-input textarea {
+  flex: 1;
+  resize: none;
+  min-height: 48px;
+  max-height: 120px;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 0.9rem;
+  outline: none;
+  line-height: 1.4;
+}
+
+.chat-input textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.send-button {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.6rem 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.send-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.send-button:hover:not(:disabled) {
+  background: #1d4ed8;
+}
